@@ -1,5 +1,7 @@
 import 'package:devsnode_ecommerce_app/pages/common/login_page.dart';
+import 'package:devsnode_ecommerce_app/router/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -111,9 +113,10 @@ class _SignupPageState extends State<SignupPage> {
                     Text('Already have an account?'),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) {
-                          return LoginPage();
-                        }));
+                        // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        //   return LoginPage();
+                        // }));
+                        context.goNamed(AppRoutes.loginRoute.name);
                       },
                       child: const Text('Sign in'),
                     ),

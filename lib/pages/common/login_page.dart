@@ -4,10 +4,12 @@ import 'package:art_sweetalert/art_sweetalert.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:devsnode_ecommerce_app/pages/merchant/merchant_dashboard_page.dart';
 import 'package:devsnode_ecommerce_app/pages/common/sign_up_page.dart';
+import 'package:devsnode_ecommerce_app/router/app_routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:upgrader/upgrader.dart';
@@ -284,11 +286,15 @@ class _LoginPageState extends State<LoginPage> {
 
                                 confirmButtonText: 'Home',
                                 onConfirm: () {
-                                  Navigator.of(context).pop();
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                        return BudgetPage();
-                                      }));
+                                  // Navigator.of(context).pop();
+                                  // Navigator.push(context,
+                                  //     MaterialPageRoute(builder: (context) {
+                                  //       return BudgetPage();
+                                  //     }));
+
+                                  context.goNamed(AppRoutes.merchantDashboardRoute.name);
+
+
                                 }));
                       } else if (value['status'] == 'error') {
                         ArtSweetAlert.show(

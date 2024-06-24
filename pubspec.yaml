@@ -43,6 +43,7 @@ dependencies:
   art_sweetalert:
   upgrader: ^8.1.0
   flutter_easyloading:
+  go_router:
 
 dev_dependencies:
   flutter_test:

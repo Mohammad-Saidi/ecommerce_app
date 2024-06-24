@@ -1,6 +1,8 @@
 import 'package:devsnode_ecommerce_app/pages/common/login_page.dart';
 import 'package:devsnode_ecommerce_app/pages/common/sign_up_page.dart';
+import 'package:devsnode_ecommerce_app/router/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -76,9 +78,16 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(left: 26.0, right: 26.0),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) {
-                              return SignupPage();
-                            }));
+                            // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            //   return SignupPage();
+                            // }));
+
+                            context.goNamed(AppRoutes.loginRoute.name);
+
+
+
+
+
                           },
                           child: const Text('Signup', style: TextStyle(color: Colors.black),),
                           style: ElevatedButton.styleFrom(
